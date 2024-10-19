@@ -1,0 +1,52 @@
+run:
+  concurrency: 8
+  issues-exit-code: 1
+  tests: true
+
+linters-settings:
+  revive:
+    severity: error
+    confidence: 0.1
+    rules:
+      - name: comment-spacings
+        severity: warning
+        disabled: false
+        exclude: [ "" ]
+        arguments:
+          - mypragma
+          - otherpragma
+      - name: comments-density
+        severity: warning
+        disabled: false
+        exclude: [ "" ]
+        arguments: [ 40 ]
+      - name: exported
+        arguments:
+          - checkPrivateReceivers
+  depguard:
+    rules:
+      main:
+        list-mode: original
+        files:
+          - $all
+        allow:
+          - iter
+          - errors
+          - lfucache/internal/linkedlist
+
+linters:
+  enable:
+    - depguard
+    - revive
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+
+issues:
+  exclude-files:
+    - lfu_test.go
+  exclude-use-default: true
+  max-issues-per-linter: 0
