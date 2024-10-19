@@ -14,7 +14,7 @@ all: lint test
 install-deps:
 	echo 'Installing dependencies...'
 	tmp=$$(mktemp -d) && cd $$tmp && pwd && go mod init temp && \
-	GOBIN=$(LOCAL_BIN) go install github.com/golangci/golangci-lint/cmd/golangci-lint@v$(GOLANGCI_TAG) && \
+	GOTOOLCHAIN=go1.23.1 GOBIN=$(LOCAL_BIN) go install github.com/golangci/golangci-lint/cmd/golangci-lint@v$(GOLANGCI_TAG) && \
 	GOBIN=$(LOCAL_BIN) go install github.com/rakyll/gotest@v0.0.6 && \
 	rm -fr $$tmp
 
