@@ -5,6 +5,8 @@
 В данном домашнем задании вам предлагается реализовать
 собственный [LFU cache](https://en.wikipedia.org/wiki/Least_frequently_used)
 
+В рамках задания для его реализации требуется реализовать свой [LinkedList](./internal/linkedlist)
+
 ```go
 package lfu
 
@@ -66,16 +68,18 @@ type cacheImpl[K comparable, V any] struct{}
 func New[K comparable, V any](capacity ...int) *cacheImpl[K, V] {
 	return new(cacheImpl[K, V])
 }
+
 ```
 
 ## Особенности реализации
 
 - Обратите внимание на асимптотику.
 - Обратите внимание на список допустимых пакетов в .golangci.yaml.
+- В этом задании необходимо написать свой LinkedList, объявив соответствующий интерфейс
 
 ## Сдача
 
-* Все функции реализовать в файле [`lfu.go`](/internal/lfu/lfu.go)
+* Все функции реализовать в файлах [lfu.go](/internal/lfu/lfu.go) и [list.go](/internal/linkedlist/list.go)
 * Открыть pull request из ветки `hw` в ветку `main` **вашего репозитория**.
 * В описании PR заполнить количество часов, которые вы потратили на это задание.
 * Отправить заявку на ревью в соответствующей форме.
