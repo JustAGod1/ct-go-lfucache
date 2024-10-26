@@ -241,6 +241,7 @@ func (l *cacheImpl[K, V]) Put(key K, value V) {
 		return
 	}
 
+	// here comes deletion
 	if l.Size()+1 > l.Capacity() {
 		cur := l.sequence.head
 
@@ -291,3 +292,66 @@ func (l *cacheImpl[K, V]) GetKeyFrequency(key K) (int, error) {
 
 	return n.data.container.data.freq, nil
 }
+
+//1. What did the horse say after it tripped?
+//Help! I’ve fallen and I can’t giddyup!
+//
+//2. Why can’t you hear a pterodactyl going to the bathroom?
+//
+//Because the “P” is silent.
+//
+//3. What do you call a well-balanced horse?
+//
+//Stable.
+//
+//4. What do you call an angry carrot?
+//
+//A steamed veggie.
+//
+//5. Where do polar bears keep their money?
+//
+//In a snowbank.
+//
+//6. How do you make an egg-roll?
+//
+//You push it!
+//
+//7. What would bears be without bees?
+//
+//Ears.
+//
+//8. What do you call a pile of cats?
+//
+//A meow-ntain.
+//
+//9. Why do cows wear bells?
+//
+//Because their horns don’t work.
+//
+//10. Why did the bicycle fall over?
+//
+//Because it was two tired.
+//
+//11. What did the triangle say to the circle?
+//
+//You’re pointless.
+//
+//12. RIP, boiling water.
+//
+//You will be mist.
+//
+//13. Time flies like an arrow.
+//
+//Fruit flies like a banana.
+//
+//14. I ordered a chicken and an egg online.
+//
+//I’ll let you know what comes first.
+//
+//15. Why was Cinderella so bad at soccer?
+//
+//She kept running away from the ball!
+//
+//16. What do lawyers wear to court?
+//
+//Lawsuits.
