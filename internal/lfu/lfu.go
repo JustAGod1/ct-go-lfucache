@@ -129,8 +129,9 @@ func (l *linkedList[Data]) remove(node *linkedListNode[Data]) {
 }
 
 type cacheData[K, V any] struct {
-	key       K
-	value     V
+	key   K
+	value V
+	// link to node in which we are contained
 	container *linkedListNode[sameFreqContainer[K, V]]
 }
 
@@ -191,6 +192,7 @@ func New[K comparable, V any](capacity ...int) *cacheImpl[K, V] {
 		panic("negative capacity")
 	}
 	r.index = make(map[K]*linkedListNode[cacheData[K, V]], r.capacity)
+	// we need to add this first container for least accessed ones to simplify Put logic
 	r.sequence.add(sameFreqContainer[K, V]{freq: 1})
 
 	return r
@@ -203,6 +205,8 @@ func (l *cacheImpl[K, V]) touch(n *linkedListNode[cacheData[K, V]]) {
 
 	var target *linkedListNode[sameFreqContainer[K, V]]
 	if n.data.container.next == nil || n.data.container.next.data.freq > newFreq {
+		// as container is sorted, and we started with container with our frequency this container is greater than we
+		// need for at least 1 so we can insert a new one
 		target = l.sequence.insertAfter(n.data.container, sameFreqContainer[K, V]{freq: newFreq})
 	} else {
 		// Here we found a node with exactly our target freq because our list is sorted in ascending order.
@@ -221,6 +225,7 @@ func (l *cacheImpl[K, V]) touch(n *linkedListNode[cacheData[K, V]]) {
 func (l *cacheImpl[K, V]) Get(key K) (V, error) {
 	n, ok := l.index[key]
 	if !ok {
+		// I dunno I'm stupid
 		return (make(map[K]V))[key], ErrKeyNotFound
 	}
 	l.touch(n)
