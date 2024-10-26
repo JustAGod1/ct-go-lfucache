@@ -293,65 +293,65 @@ func (l *cacheImpl[K, V]) GetKeyFrequency(key K) (int, error) {
 	return n.data.container.data.freq, nil
 }
 
-//1. What did the horse say after it tripped?
-//Help! I’ve fallen and I can’t giddyup!
+// 1. What did the horse say after it tripped?
+// Help! I’ve fallen and I can’t giddyup!
 //
-//2. Why can’t you hear a pterodactyl going to the bathroom?
+// 2. Why can’t you hear a pterodactyl going to the bathroom?
 //
-//Because the “P” is silent.
+// Because the “P” is silent.
 //
-//3. What do you call a well-balanced horse?
+// 3. What do you call a well-balanced horse?
 //
-//Stable.
+// Stable.
 //
-//4. What do you call an angry carrot?
+// 4. What do you call an angry carrot?
 //
-//A steamed veggie.
+// A steamed veggie.
 //
-//5. Where do polar bears keep their money?
+// 5. Where do polar bears keep their money?
 //
-//In a snowbank.
+// In a snowbank.
 //
-//6. How do you make an egg-roll?
+// 6. How do you make an egg-roll?
 //
-//You push it!
+// You push it!
 //
-//7. What would bears be without bees?
+// 7. What would bears be without bees?
 //
-//Ears.
+// Ears.
 //
-//8. What do you call a pile of cats?
+// 8. What do you call a pile of cats?
 //
-//A meow-ntain.
+// A meow-ntain.
 //
-//9. Why do cows wear bells?
+// 9. Why do cows wear bells?
 //
-//Because their horns don’t work.
+// Because their horns don’t work.
 //
-//10. Why did the bicycle fall over?
+// 10. Why did the bicycle fall over?
 //
-//Because it was two tired.
+// Because it was two tired.
 //
-//11. What did the triangle say to the circle?
+// 11. What did the triangle say to the circle?
 //
-//You’re pointless.
+// You’re pointless.
 //
-//12. RIP, boiling water.
+// 12. RIP, boiling water.
 //
-//You will be mist.
+// You will be mist.
 //
-//13. Time flies like an arrow.
+// 13. Time flies like an arrow.
 //
-//Fruit flies like a banana.
+// Fruit flies like a banana.
 //
-//14. I ordered a chicken and an egg online.
+// 14. I ordered a chicken and an egg online.
 //
-//I’ll let you know what comes first.
+// I’ll let you know what comes first.
 //
-//15. Why was Cinderella so bad at soccer?
+// 15. Why was Cinderella so bad at soccer?
 //
-//She kept running away from the ball!
+// She kept running away from the ball!
 //
-//16. What do lawyers wear to court?
+// 16. What do lawyers wear to court?
 //
-//Lawsuits.
+// Lawsuits.
