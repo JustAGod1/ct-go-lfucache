@@ -226,7 +226,8 @@ func (l *cacheImpl[K, V]) Get(key K) (V, error) {
 	n, ok := l.index[key]
 	if !ok {
 		// I dunno I'm stupid
-		return (make(map[K]V))[key], ErrKeyNotFound
+		var v V
+		return v, ErrKeyNotFound
 	}
 	l.touch(n)
 
